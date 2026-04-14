@@ -52,8 +52,6 @@ export default function ContactForm() {
     }
   }
 
-  const firebaseReady = isFirebaseConfigured()
-
   return (
     <section id="contact" className="py-20 px-4 bg-white border-t border-gray-100">
       <div className="max-w-xl mx-auto">
@@ -66,14 +64,6 @@ export default function ContactForm() {
             </a>
             .
           </p>
-          {!firebaseReady && (
-            <p className="mt-3 text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 text-left">
-              Firebase env vars are not set—submits will open your email app instead. Add{' '}
-              <code className="text-xs bg-amber-100/80 px-1 rounded">.env.local</code> from{' '}
-              <code className="text-xs bg-amber-100/80 px-1 rounded">.env.local.example</code> to save
-              messages in Firestore.
-            </p>
-          )}
         </div>
         <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4" noValidate>
           <div>
@@ -132,13 +122,8 @@ export default function ContactForm() {
             disabled={submitting}
             className="rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white shadow transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-60"
           >
-            {submitting ? 'Sending…' : firebaseReady ? 'Send message' : 'Open email client'}
+            {submitting ? 'Sending…' : 'Send message'}
           </button>
-          <p className="text-center text-xs text-gray-500">
-            {firebaseReady
-              ? 'Messages are stored in Firebase Firestore.'
-              : 'Opens your mail app with this message until Firebase is configured.'}
-          </p>
         </form>
         <div className="mt-12 border-t border-gray-100 pt-10">
           <p className="text-center text-sm font-medium text-gray-700">Or find me online</p>
