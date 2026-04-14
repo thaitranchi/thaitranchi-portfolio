@@ -1,0 +1,26 @@
+rules_version = '2';
+
+// Deploy: firebase deploy --only firestore:rules
+// Console: Firestore → Rules
+//
+// Allows unauthenticated clients to CREATE only in contactMessages, with basic field checks.
+// No reads/updates/deletes from the client—view submissions in Firebase Console.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /contactMessages/{messageId} {
+      allow create: if
+        request.resource.data.keys().hasAll(['name', 'email', 'message', 'source', 'createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() < 200
+        && request.resource.data.email is string
+        && request.resource.data.email.size() < 320
+        && request.resource.data.message is string
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() < 10000
+        && request.resource.data.source == 'portfolio';
+      allow read, update, delete: if false;
+    }
+  }
+}
