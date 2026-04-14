@@ -1,0 +1,21 @@
+# AWS Amplify Hosting — connect this repo in Amplify Console (Hosting → Host web app).
+# Add the same NEXT_PUBLIC_FIREBASE_* variables under App settings → Environment variables.
+
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install
+        - nvm use
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
