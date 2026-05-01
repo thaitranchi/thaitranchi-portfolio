@@ -20,7 +20,7 @@ export type SocialLinkItem = {
 export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
     label: 'Website',
-    href: 'https://www.tctsoftwares.com',
+    href: 'https://tct-software-website.vercel.app/',
     handle: 'tctsoftwares.com',
     Icon: Globe,
   },
