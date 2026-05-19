@@ -32,7 +32,7 @@ export default function ContactPage() {
             <p>
               <strong className="text-gray-900">Website:</strong>{' '}
               <a
-                href="https://www.tctsoftwares.com"
+                href="https://tct-software-website.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-600 hover:underline"
