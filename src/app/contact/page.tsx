@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1 px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl">
@@ -54,7 +54,7 @@ export default function ContactPage() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1957.6289783730444!2d106.53430059802021!3d11.09414242120059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174cd3cd7292143%3A0x349707358a762795!2sTCT%20Softwares!5e0!3m2!1svi!2s!4v1749265050520!5m2!1svi!2s"
               width="100%"
               height="300"
-              className="iframe-borderless min-h-[280px] w-full"
+              className="min-h-70 w-full border-0"
               allowFullScreen
               title="TCT Softwares location"
             />

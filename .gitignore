@@ -11,3 +11,5 @@ out
 
 # debug
 npm-debug.log*
+
+tsconfig.tsbuildinfo

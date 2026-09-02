@@ -1,19 +1,19 @@
-import type { LucideIcon } from 'lucide-react'
+import type { ComponentType } from 'react'
+import { Globe } from 'lucide-react'
 import {
-  Facebook,
-  Github,
-  Globe,
-  Linkedin,
-  Twitter,
-  Youtube,
-} from 'lucide-react'
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaXTwitter,
+  FaYoutube,
+} from 'react-icons/fa6'
 
 export type SocialLinkItem = {
   label: string
   href: string
   /** Short handle for display, e.g. @bluetctgaming */
   handle?: string
-  Icon: LucideIcon
+  Icon: ComponentType<{ className?: string; 'aria-hidden'?: boolean }>
 }
 
 /** Single source of truth for social profiles — update here sitewide. */
@@ -28,31 +28,31 @@ export const SOCIAL_LINKS: SocialLinkItem[] = [
     label: 'GitHub',
     href: 'https://github.com/thaitranchi',
     handle: '@thaitranchi',
-    Icon: Github,
+    Icon: FaGithub,
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/thaichitran',
     handle: 'in/thaichitran',
-    Icon: Linkedin,
+    Icon: FaLinkedin,
   },
   {
     label: 'X',
     href: 'https://x.com/bluetctgaming',
     handle: '@bluetctgaming',
-    Icon: Twitter,
+    Icon: FaXTwitter,
   },
   {
     label: 'YouTube',
     href: 'https://www.youtube.com/@bluetctgaming',
     handle: '@bluetctgaming',
-    Icon: Youtube,
+    Icon: FaYoutube,
   },
   {
     label: 'Facebook',
     href: 'https://www.facebook.com/thaitranchi99/',
     handle: 'thaitranchi99',
-    Icon: Facebook,
+    Icon: FaFacebook,
   },
 ]
 
@@ -103,8 +103,8 @@ export function SocialLinksList({ className = '' }: { className?: string }) {
             rel="noopener noreferrer"
             className="group flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-4 transition hover:border-indigo-200 hover:bg-indigo-50/50"
           >
-            <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600 group-hover:bg-indigo-100 group-hover:text-indigo-700">
-              <Icon className="h-5 w-5" aria-hidden />
+            <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600 group-hover:bg-indigo-100 group-hover:text-indigo-700">
+              <Icon className="size-5" aria-hidden />
             </span>
             <span className="min-w-0">
               <span className="block font-semibold text-gray-900">{label}</span>

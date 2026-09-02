@@ -60,9 +60,9 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-slate-50 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto">
+    <section id="projects" className="bg-slate-50 px-4 py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold text-gray-900">Projects</h2>
           <p className="mt-3 text-gray-600">
             Selected public repos from{' '}
@@ -83,10 +83,10 @@ export default function Projects() {
               key={project.title}
               className="group flex flex-col rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm transition hover:border-indigo-200 hover:shadow-md"
             >
-              <h3 className="text-xl font-semibold text-gray-900 group-hover:text-indigo-700 transition-colors">
+              <h3 className="text-xl font-semibold text-gray-900 transition-colors group-hover:text-indigo-700">
                 {project.title}
               </h3>
-              <p className="mt-3 flex-1 text-gray-600 text-sm leading-relaxed">{project.description}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600">{project.description}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
@@ -105,7 +105,7 @@ export default function Projects() {
                   className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-800"
                 >
                   View on GitHub
-                  <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                  <ExternalLink className="size-3.5" aria-hidden />
                 </a>
                 {project.related && project.related.length > 0 && (
                   <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">

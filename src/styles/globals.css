@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
@@ -14,8 +12,4 @@ html {
 
 body {
   @apply bg-white text-gray-900 antialiased;
-}
-
-.iframe-borderless {
-  border: none;
 }
